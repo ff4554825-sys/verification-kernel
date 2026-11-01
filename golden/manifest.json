@@ -1,0 +1,1006 @@
+{
+  "generatedAt": "2026-10-27T13:53:46.450Z",
+  "templates": 10,
+  "tasks": [
+    {
+      "id": "sum-even-v1",
+      "template": "sum-even",
+      "variant": 1,
+      "title": "Sum even numbers",
+      "signature": "sumEven(values)",
+      "dir": "tasks/sum-even-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "sum-even-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "sum-even-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "sum-even-v2",
+      "template": "sum-even",
+      "variant": 2,
+      "title": "Sum even numbers",
+      "signature": "sumEven(values)",
+      "dir": "tasks/sum-even-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "sum-even-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "sum-even-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "slugify-v1",
+      "template": "slugify",
+      "variant": 1,
+      "title": "Slugify text",
+      "signature": "slugify(text)",
+      "dir": "tasks/slugify-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "slugify-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "slugify-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "slugify-v2",
+      "template": "slugify",
+      "variant": 2,
+      "title": "Slugify text",
+      "signature": "slugify(text)",
+      "dir": "tasks/slugify-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "slugify-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "slugify-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "parse-duration-v1",
+      "template": "parse-duration",
+      "variant": 1,
+      "title": "Parse a duration",
+      "signature": "parseDuration(text)",
+      "dir": "tasks/parse-duration-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "parse-duration-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "parse-duration-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "parse-duration-v2",
+      "template": "parse-duration",
+      "variant": 2,
+      "title": "Parse a duration",
+      "signature": "parseDuration(text)",
+      "dir": "tasks/parse-duration-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "parse-duration-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "parse-duration-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "chunk-v1",
+      "template": "chunk",
+      "variant": 1,
+      "title": "Chunk an array",
+      "signature": "chunk(values, size)",
+      "dir": "tasks/chunk-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "chunk-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "chunk-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "chunk-v2",
+      "template": "chunk",
+      "variant": 2,
+      "title": "Chunk an array",
+      "signature": "chunk(values, size)",
+      "dir": "tasks/chunk-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "chunk-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "chunk-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "get-path-v1",
+      "template": "get-path",
+      "variant": 1,
+      "title": "Read a nested path",
+      "signature": "getPath(object, path)",
+      "dir": "tasks/get-path-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "get-path-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "get-path-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "get-path-v2",
+      "template": "get-path",
+      "variant": 2,
+      "title": "Read a nested path",
+      "signature": "getPath(object, path)",
+      "dir": "tasks/get-path-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "get-path-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "get-path-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "clamp-v1",
+      "template": "clamp",
+      "variant": 1,
+      "title": "Clamp a number",
+      "signature": "clamp(value, min, max)",
+      "dir": "tasks/clamp-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "clamp-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "clamp-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "clamp-v2",
+      "template": "clamp",
+      "variant": 2,
+      "title": "Clamp a number",
+      "signature": "clamp(value, min, max)",
+      "dir": "tasks/clamp-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "clamp-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "clamp-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "unique-by-v1",
+      "template": "unique-by",
+      "variant": 1,
+      "title": "Deduplicate by key",
+      "signature": "uniqueBy(values, key)",
+      "dir": "tasks/unique-by-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "unique-by-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "unique-by-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "unique-by-v2",
+      "template": "unique-by",
+      "variant": 2,
+      "title": "Deduplicate by key",
+      "signature": "uniqueBy(values, key)",
+      "dir": "tasks/unique-by-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "unique-by-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "unique-by-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-case-v1",
+      "template": "title-case",
+      "variant": 1,
+      "title": "Title-case words",
+      "signature": "titleCase(text)",
+      "dir": "tasks/title-case-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "title-case-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "title-case-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-case-v2",
+      "template": "title-case",
+      "variant": 2,
+      "title": "Title-case words",
+      "signature": "titleCase(text)",
+      "dir": "tasks/title-case-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "title-case-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "title-case-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "range-v1",
+      "template": "range",
+      "variant": 1,
+      "title": "Build a numeric range",
+      "signature": "range(start, end, step)",
+      "dir": "tasks/range-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "range-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "range-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "range-v2",
+      "template": "range",
+      "variant": 2,
+      "title": "Build a numeric range",
+      "signature": "range(start, end, step)",
+      "dir": "tasks/range-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "range-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "range-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "group-by-v1",
+      "template": "group-by",
+      "variant": 1,
+      "title": "Group values by key",
+      "signature": "groupBy(values, key)",
+      "dir": "tasks/group-by-v1",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "group-by-v1",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "group-by-v1-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    },
+    {
+      "id": "group-by-v2",
+      "template": "group-by",
+      "variant": 2,
+      "title": "Group values by key",
+      "signature": "groupBy(values, key)",
+      "dir": "tasks/group-by-v2",
+      "candidates": {
+        "good": "solution.good.mjs",
+        "bad-visible": "solution.bad-visible.mjs",
+        "bad-hidden": "solution.bad-hidden.mjs"
+      },
+      "plan": {
+        "id": "group-by-v2",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          },
+          {
+            "id": "heldout",
+            "argv": [
+              "node",
+              "heldout.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      },
+      "visibleOnlyPlan": {
+        "id": "group-by-v2-visible",
+        "checks": [
+          {
+            "id": "visible",
+            "argv": [
+              "node",
+              "test.mjs"
+            ],
+            "required": true,
+            "timeoutMs": 10000
+          }
+        ]
+      }
+    }
+  ]
+}

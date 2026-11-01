@@ -1,0 +1,50 @@
+{
+  "id": "unique-by-v2",
+  "template": "unique-by",
+  "variant": 2,
+  "title": "Deduplicate by key",
+  "signature": "uniqueBy(values, key)",
+  "dir": "tasks/unique-by-v2",
+  "candidates": {
+    "good": "solution.good.mjs",
+    "bad-visible": "solution.bad-visible.mjs",
+    "bad-hidden": "solution.bad-hidden.mjs"
+  },
+  "plan": {
+    "id": "unique-by-v2",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      },
+      {
+        "id": "heldout",
+        "argv": [
+          "node",
+          "heldout.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  },
+  "visibleOnlyPlan": {
+    "id": "unique-by-v2-visible",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  }
+}

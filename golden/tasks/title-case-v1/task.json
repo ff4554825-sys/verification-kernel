@@ -1,0 +1,50 @@
+{
+  "id": "title-case-v1",
+  "template": "title-case",
+  "variant": 1,
+  "title": "Title-case words",
+  "signature": "titleCase(text)",
+  "dir": "tasks/title-case-v1",
+  "candidates": {
+    "good": "solution.good.mjs",
+    "bad-visible": "solution.bad-visible.mjs",
+    "bad-hidden": "solution.bad-hidden.mjs"
+  },
+  "plan": {
+    "id": "title-case-v1",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      },
+      {
+        "id": "heldout",
+        "argv": [
+          "node",
+          "heldout.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  },
+  "visibleOnlyPlan": {
+    "id": "title-case-v1-visible",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  }
+}

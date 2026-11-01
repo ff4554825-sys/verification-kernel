@@ -1,0 +1,50 @@
+{
+  "id": "parse-duration-v2",
+  "template": "parse-duration",
+  "variant": 2,
+  "title": "Parse a duration",
+  "signature": "parseDuration(text)",
+  "dir": "tasks/parse-duration-v2",
+  "candidates": {
+    "good": "solution.good.mjs",
+    "bad-visible": "solution.bad-visible.mjs",
+    "bad-hidden": "solution.bad-hidden.mjs"
+  },
+  "plan": {
+    "id": "parse-duration-v2",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      },
+      {
+        "id": "heldout",
+        "argv": [
+          "node",
+          "heldout.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  },
+  "visibleOnlyPlan": {
+    "id": "parse-duration-v2-visible",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  }
+}

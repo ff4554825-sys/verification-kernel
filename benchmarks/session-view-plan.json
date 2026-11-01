@@ -1,0 +1,15 @@
+{
+  "id": "session-view",
+  "checks": [
+    {
+      "id": "server-syntax",
+      "argv": ["node", "--check", "index.js"],
+      "required": true
+    },
+    {
+      "id": "client-syntax",
+      "argv": ["node", "--check", "client.js"],
+      "required": true
+    }
+  ]
+}

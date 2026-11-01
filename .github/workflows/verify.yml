@@ -1,0 +1,44 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      VERIFICATION_SIGNING_KEY_PEM: ${{ secrets.VERIFICATION_SIGNING_KEY_PEM }}
+      VERIFICATION_PUBLIC_KEY_PEM: ${{ secrets.VERIFICATION_PUBLIC_KEY_PEM }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Materialize optional signing keys
+        if: ${{ env.VERIFICATION_SIGNING_KEY_PEM != '' }}
+        run: |
+          printf '%s' "$VERIFICATION_SIGNING_KEY_PEM" > "$RUNNER_TEMP/verification.key"
+          printf '%s' "$VERIFICATION_PUBLIC_KEY_PEM" > "$RUNNER_TEMP/verification.pub"
+          echo "VERIFICATION_SIGNING_KEY=$RUNNER_TEMP/verification.key" >> "$GITHUB_ENV"
+          echo "VERIFICATION_PUBLIC_KEY=$RUNNER_TEMP/verification.pub" >> "$GITHUB_ENV"
+      - name: Run deterministic verification
+        run: bash ci/verify.sh
+      - name: L2 PR review + isolated QA
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          node bin/pr-check.js \
+            --base "origin/${{ github.base_ref }}" \
+            --qa-command '["bash","ci/verify.sh"]' \
+            --json
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-evidence
+          path: |
+            .dsh/verification
+            .dsh/pr-check

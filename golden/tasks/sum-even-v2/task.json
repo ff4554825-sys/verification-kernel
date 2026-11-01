@@ -1,0 +1,50 @@
+{
+  "id": "sum-even-v2",
+  "template": "sum-even",
+  "variant": 2,
+  "title": "Sum even numbers",
+  "signature": "sumEven(values)",
+  "dir": "tasks/sum-even-v2",
+  "candidates": {
+    "good": "solution.good.mjs",
+    "bad-visible": "solution.bad-visible.mjs",
+    "bad-hidden": "solution.bad-hidden.mjs"
+  },
+  "plan": {
+    "id": "sum-even-v2",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      },
+      {
+        "id": "heldout",
+        "argv": [
+          "node",
+          "heldout.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  },
+  "visibleOnlyPlan": {
+    "id": "sum-even-v2-visible",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  }
+}

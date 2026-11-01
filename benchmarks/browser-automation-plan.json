@@ -1,0 +1,11 @@
+{
+  "id": "browser-automation",
+  "checks": [
+    {
+      "id": "actions",
+      "argv": ["node", "--test", "test/actions.test.js"],
+      "required": true,
+      "timeoutMs": 60000
+    }
+  ]
+}

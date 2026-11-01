@@ -1,0 +1,93 @@
+{
+  "name": "@local/dsh-verification-kernel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "Deterministic verification kernel and turn-stopping gate for DSH.",
+  "keywords": [
+    "dsh",
+    "cordis",
+    "verification",
+    "agent",
+    "gate",
+    "evidence",
+    "wsl",
+    "mutation-testing"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./core": "./lib/kernel.js",
+    "./exec": "./lib/exec.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "bin": {
+    "dsh-verify": "./bin/verify.js",
+    "dsh-verify-override": "./bin/override.js",
+    "dsh-verify-report": "./bin/report.js",
+    "dsh-verify-contract": "./bin/contract.js",
+    "dsh-diff-audit": "./bin/diff-audit.js",
+    "dsh-security-audit": "./bin/security-audit.js",
+    "dsh-export-trace": "./bin/export-trace.js",
+    "dsh-critic": "./bin/critic.js",
+    "dsh-review-packet": "./bin/review-packet.js",
+    "dsh-policy-check": "./bin/policy-check.js",
+    "dsh-test-patch": "./bin/test-patch.js",
+    "dsh-mutation": "./bin/mutation.js",
+    "dsh-mutation-gate": "./bin/mutation-gate.js",
+    "dsh-verify-wsl": "./bin/verify-wsl.js",
+    "dsh-verification-workflow": "./bin/workflow.js",
+    "dsh-verification-keygen": "./bin/verification-keygen.js",
+    "dsh-verdict-verify": "./bin/verdict-verify.js",
+    "dsh-outcomes": "./bin/outcomes.js",
+    "dsh-calibrate": "./bin/calibrate.js",
+    "dsh-knowledge": "./bin/knowledge.js",
+    "dsh-ab": "./bin/ab.js",
+    "dsh-local-learn": "./bin/local-learn.js",
+    "dsh-pr-check": "./bin/pr-check.js",
+    "dsh-benchmark": "./bin/benchmark.js"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "bin/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "test/*.js",
+    "golden/**",
+    "policies/**",
+    "benchmarks/**",
+    "ci/**",
+    "scripts/**",
+    "docs/**",
+    "stryker.conf.json",
+    "stryker.sample.conf.json",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test test/all.test.js",
+    "bench": "node golden/run.js",
+    "report": "node bin/report.js",
+    "diff": "node bin/diff-audit.js",
+    "mutation": "node bin/mutation.js",
+    "mutation:stryker": "node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.conf.json",
+    "mutation:gate": "node bin/mutation-gate.js",
+    "benchmark": "node bin/benchmark.js",
+    "pack": "npm pack"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/tap-runner": "^10.1.1"
+  }
+}
