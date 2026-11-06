@@ -102,22 +102,32 @@ async function checkChrome() {
 }
 
 async function checkContext7() {
-  try {
-    const response = await fetch('https://mcp.context7.com/mcp', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
-      body: JSON.stringify({
-        jsonrpc: '2.0', id: 1, method: 'initialize',
-        params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'dsh-verify-stack', version: '1' } },
-      }),
-      signal: AbortSignal.timeout(15_000),
-    });
-    const body = await response.text();
-    const ok = response.ok && /Context7/.test(body);
-    record('context7', ok ? 'pass' : 'fail', ok ? 'Context7 initialize ok' : `HTTP ${response.status}`);
-  } catch (error) {
-    record('context7', 'fail', error instanceof Error ? error.message : String(error));
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch('https://mcp.context7.com/mcp', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
+        body: JSON.stringify({
+          jsonrpc: '2.0', id: 1, method: 'initialize',
+          params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'dsh-verify-stack', version: '1' } },
+        }),
+        signal: AbortSignal.timeout(15_000),
+      });
+      const body = await response.text();
+      if (response.ok && /Context7/.test(body)) {
+        record('context7', 'pass', `Context7 initialize ok (attempt ${attempt})`);
+        return;
+      }
+      lastError = `HTTP ${response.status}`;
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+    }
+    if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, 1_000));
   }
+  // A reachable endpoint is an installation property; a transient network
+  // failure is explicitly unknown, not a fake pass or an installation failure.
+  record('context7', 'unknown', `network check failed after 3 attempts: ${lastError}`);
 }
 
 async function checkChromeMcp() {
