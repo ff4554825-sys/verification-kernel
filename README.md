@@ -66,6 +66,7 @@ rather than the agent's workspace, and a check that cannot be verified produces
 | `bin/knowledge.js` | CLI: build/search the local knowledge index. |
 | `bin/ab.js` | CLI: paired A/B outcome comparison. |
 | `bin/pr-check.js` | CLI: local PR review packet + isolated QA. |
+| `bin/verify-stack.js` | CLI: verify local Node/Chrome/MCP/plugin/CLI extension stack. |
 | `bin/benchmark.js` | CLI: run a manifest of patch tasks and report false accept/reject. |
 | `policies/` | OPA Rego policy for verdicts. |
 | `tools/` | Locally installed scanners and Semgrep rules (binaries are not shipped). |
@@ -467,6 +468,7 @@ node --check index.js
 - [Local Policy Learning](docs/local-policy-learning.md)
 - [Verification Stack Architecture](docs/verification-stack-architecture.md)
 - [Plugin Catalog](docs/plugin-catalog.md)
+- [Extension Stack Verification](docs/extension-stack-verification.md)
 - [Hermes Agent Reuse Notes](docs/reuse-hermes-agent.md)
 - [Archived roadmap v1](docs/archive/2026-10-27-verification-roadmap-v1.md)
 - [Archived accuracy protocol v1](docs/archive/2026-10-28-accuracy-first-protocol-v1.md)

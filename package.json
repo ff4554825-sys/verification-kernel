@@ -49,6 +49,7 @@
     "dsh-ab": "./bin/ab.js",
     "dsh-local-learn": "./bin/local-learn.js",
     "dsh-pr-check": "./bin/pr-check.js",
+    "dsh-verify-stack": "./bin/verify-stack.js",
     "dsh-benchmark": "./bin/benchmark.js"
   },
   "files": [

@@ -42,6 +42,10 @@
                 argv: ['node', '--check', 'index.js']
                 required: true
                 timeoutMs: 30000
+              - id: extensions
+                argv: ['node', 'bin/verify-stack.js']
+                required: true
+                timeoutMs: 120000
           - id: browser-automation
             root: 'C:\Users\冯宗弘\Documents\deepseek-harness\default-workspace\browser-automation'
             mode: 'enforce'

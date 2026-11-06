@@ -13,6 +13,7 @@
 - [Local Policy Learning](local-policy-learning.md) — bounded three-factor retrieval updates
 - [Verification Stack Architecture](verification-stack-architecture.md) — L0/L1/L2/L3 adapted from OpenHands
 - [Plugin Catalog](plugin-catalog.md) — profile plugins, bundles, modules, CLIs
+- [Extension Stack Verification](extension-stack-verification.md) — Node/Chrome/MCP/plugin health
 - [Hermes Agent Reuse Notes](reuse-hermes-agent.md) — reviewed MIT upstream, designs used
 - [Archive: 2026-10-27 roadmap v1](archive/2026-10-27-verification-roadmap-v1.md) — immutable snapshot
 - [Archive: 2026-10-28 accuracy protocol v1](archive/2026-10-28-accuracy-first-protocol-v1.md) — immutable snapshot
