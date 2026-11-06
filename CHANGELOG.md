@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.1 — 2026-11-06
+
+- Add `dsh-verify-stack`: fixture checks for Node/npm, Chrome, Context7,
+  Chrome DevTools MCP, dsh-market, dsh-verify, dsh-stall-guard, modlens and
+  promptfoo.
+- Wire `extensions` into the profile verification plan.
+- Treat transient Context7 network failures as `unknown`, not installation
+  failure.
+- Document the extension health check.
+
 ## 0.1.0 — 2026-11-01
 
 Initial public-source candidate.
