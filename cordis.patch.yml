@@ -1,0 +1,72 @@
+- insert:
+    - id: verification-kernel
+      name: '@local/dsh-verification-kernel'
+      config:
+        mode: 'enforce'
+        autoLoad: true
+        autoFeedback: true
+        advisor:
+          enabled: true
+          minScore: 0.5
+        outcomeStore: '.dsh/verification/outcomes.jsonl'
+        gitPath: 'C:\Program Files\Git\cmd\git.exe'
+        maxAttempts: 2
+        includeSubagents: true
+        denyTools:
+          - plugin_manager
+        executables:
+          node: 'C:\Program Files\nodejs\node.exe'
+        projects:
+          - id: verification-kernel
+            root: 'C:\work\verification-kernel'
+            mode: 'enforce'
+            includeSubagents: true
+            denyTools:
+              - plugin_manager
+            fastPath:
+              enabled: true
+              maxFiles: 6
+              maxLines: 80
+              allowPaths: ['docs/', 'README.md', 'AGENTS.md']
+              checks: ['syntax']
+            checks:
+              - id: unit
+                argv: ['node', '--test', 'test/kernel.test.js', 'test/dsh.test.js', 'test/override.test.js', 'test/report.test.js', 'test/contract.test.js', 'test/diff.test.js', 'test/security.test.js', 'test/trace-export.test.js', 'test/trajectory.test.js', 'test/review.test.js', 'test/policy.test.js', 'test/test-patch.test.js', 'test/test-patch-wsl.test.js', 'test/verify-wsl.test.js', 'test/test-patch-docker.test.js', 'test/benchmark.test.js', 'test/mutation.test.js', 'test/mutation-gate.test.js', 'test/outcomes.test.js', 'test/sign.test.js', 'test/workflow.test.js', 'test/calibration.test.js', 'test/complexity.test.js', 'test/knowledge.test.js', 'test/knowledge-rerank.test.js', 'test/ab.test.js', 'test/local-learner.test.js', 'test/feedback-loop.test.js', 'test/advisor.test.js', 'test/pr-check.test.js', 'test/auto-load.test.js']
+                required: true
+                timeoutMs: 120000
+              - id: golden
+                argv: ['node', 'golden/run.js']
+                required: true
+                timeoutMs: 180000
+              - id: syntax
+                argv: ['node', '--check', 'index.js']
+                required: true
+                timeoutMs: 30000
+              - id: extensions
+                argv: ['node', 'bin/verify-stack.js']
+                required: true
+                timeoutMs: 120000
+          - id: browser-automation
+            root: 'C:\work\browser-automation'
+            mode: 'enforce'
+            isolation: 'wsl'
+            wslTimeoutMs: 120000
+            checks:
+              - id: actions
+                argv: ['node', '--test', 'test/actions.test.js']
+                required: true
+                timeoutMs: 120000
+          - id: session-view
+            root: 'C:\work\session-view'
+            mode: 'enforce'
+            isolation: 'wsl'
+            wslTimeoutMs: 120000
+            checks:
+              - id: syntax-index
+                argv: ['node', '--check', 'index.js']
+                required: true
+                timeoutMs: 30000
+              - id: syntax-client
+                argv: ['node', '--check', 'client.js']
+                required: true
+                timeoutMs: 30000

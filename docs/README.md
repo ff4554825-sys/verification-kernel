@@ -1,0 +1,45 @@
+# Verification Kernel Docs
+
+- [Roadmap & Operating Model](verification-roadmap.md) — canonical, editable v1.0
+- [Accuracy-First Verification Protocol](accuracy-first-protocol.md) — adopted working standard
+- [Phase 1 Task Board](phase1-board.md) — execution board for the trust foundation
+- [Phase 1 Implementation Report](phase1-implementation.md) — delivered features, evidence, gaps
+- [P2/P3 Implementation Report](p2-p3-implementation.md) — diff/security/critic/review/OPA/test-patch
+- [World-Class Roadmap & Progress](world-class-roadmap.md) — mutation, Docker, real SWE-bench task
+- [World-Class Scorecard](world-class-scorecard.md) — final hard evidence and non-claims
+- [Mutation Equivalents](mutation-equivalents.md) — 27 survivor classification
+- [Deterministic Verification Workflow](verification-workflow.md) — 5-phase CLI workflow
+- [Calibration, Fast Path, Knowledge, A/B](calibration-fastpath-knowledge-ab.md) — new feedback/learning-adjacent features
+- [Local Policy Learning](local-policy-learning.md) — bounded three-factor retrieval updates
+- [Verification Stack Architecture](verification-stack-architecture.md) — L0/L1/L2/L3 adapted from OpenHands
+- [External Verifier Borrowings](verifier-borrowings.md) — reason codes, rescoring, keyless attestation, relational oracles
+- [Claude Code Verification Notes](claude-code-verification-notes.md) — hook gate chain, ask/defer, allowlist holes
+- [Plugin Catalog](plugin-catalog.md) — profile plugins, bundles, modules, CLIs
+- [Extension Stack Verification](extension-stack-verification.md) — Node/Chrome/MCP/plugin health
+- [Hermes Agent Reuse Notes](reuse-hermes-agent.md) — reviewed MIT upstream, designs used
+- [Archive: 2026-10-27 roadmap v1](archive/2026-10-27-verification-roadmap-v1.md) — immutable snapshot
+- [Archive: 2026-10-28 accuracy protocol v1](archive/2026-10-28-accuracy-first-protocol-v1.md) — immutable snapshot
+- [Archive: 2026-10-28 Phase 1 implementation v1](archive/2026-10-28-phase1-implementation-v1.md) — earlier snapshot
+- [Archive: 2026-10-28 Phase 1 implementation v1.1](archive/2026-10-28-phase1-implementation-v1.1.md) — current snapshot
+- [Archive: 2026-10-28 P2/P3 implementation v1](archive/2026-10-28-p2-p3-implementation-v1.md) — earlier snapshot
+- [Archive: 2026-10-28 P2/P3 implementation v1.1](archive/2026-10-28-p2-p3-implementation-v1.1.md) — WSL2 snapshot
+- [Archive: 2026-10-28 world-class roadmap v1](archive/2026-10-28-world-class-roadmap-v1.md) — first real-task snapshot
+- [Archive: 2026-10-28 world-class roadmap v1.1](archive/2026-10-28-world-class-roadmap-v1.1.md) — Stryker full + 4-task subset
+- [Archive: 2026-10-28 world-class roadmap v1.2](archive/2026-10-28-world-class-roadmap-v1.2.md) — Stryker 81.73%
+- [Archive: 2026-10-28 world-class roadmap v1.3](archive/2026-10-28-world-class-roadmap-v1.3.md) — Stryker 90.83% + gate
+- [Archive: 2026-10-28 world-class roadmap v1.4](archive/2026-10-28-world-class-roadmap-v1.4.md) — 10 tasks + WSL verifier
+- [Archive: 2026-10-28 world-class roadmap v1.5](archive/2026-10-28-world-class-roadmap-v1.5.md) — WSL gate wired
+- [Archive: 2026-10-28 world-class roadmap v1.6](archive/2026-10-28-world-class-roadmap-v1.6.md) — hardened WSL + outcomes
+- [Archive: 2026-10-28 world-class roadmap v1.7](archive/2026-10-28-world-class-roadmap-v1.7.md) — re-measured 90.58% + escape rate
+- [Archive: 2026-10-28 world-class roadmap v1.8](archive/2026-10-28-world-class-roadmap-v1.8.md) — Stryker 95.35%
+- [Archive: 2026-10-28 world-class roadmap v1.9](archive/2026-10-28-world-class-roadmap-v1.9.md) — signed verdicts
+- [Archive: 2026-10-28 world-class roadmap v2.0](archive/2026-10-28-world-class-roadmap-v2.0.md) — CI-signed artifacts + latency
+- [Archive: 2026-10-28 world-class roadmap v2.1](archive/2026-10-28-world-class-roadmap-v2.1.md) — Stryker 96.14% + full pinned env
+- [Archive: 2026-10-28 world-class roadmap v2.2](archive/2026-10-28-world-class-roadmap-v2.2.md) — Stryker 96.94% + equivalents
+- [Archive: 2026-10-28 world-class roadmap v2.3](archive/2026-10-28-world-class-roadmap-v2.3.md) — close-out
+- [Archive: 2026-10-28 scorecard v1](archive/2026-10-28-world-class-scorecard-v1.md) — final evidence/non-claims
+- [Archive: 2026-10-28 verification workflow v1](archive/2026-10-28-verification-workflow-v1.md) — 5-phase workflow snapshot
+- [Archive manifest](archive/MANIFEST.md) — SHA-256 and verification commands
+- [Project README](../README.md) — install, configuration, verification results
+- [Bundle config](../cordis.patch.yml) — current enforce configuration for this project
+- [Verification preset](../presets/verification/cordis.patch.yml) — dedicated agent preset

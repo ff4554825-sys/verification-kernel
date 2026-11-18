@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Verification Kernel",
+    "description": "Runs deterministic checks before a turn closes, feeds failures back to the agent, and records evidence. Off by default; enable it in a profile patch."
+  }
+}

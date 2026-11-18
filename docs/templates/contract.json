@@ -1,0 +1,42 @@
+{
+  "id": "example-task",
+  "goal": "Describe the concrete outcome the user asked for.",
+  "nonGoals": [
+    "Do not refactor unrelated code."
+  ],
+  "constraints": [
+    "Use the existing toolchain.",
+    "Do not weaken or delete tests."
+  ],
+  "acceptanceCriteria": [
+    {
+      "id": "ac-1",
+      "statement": "The originally failing behavior is fixed.",
+      "required": true
+    },
+    {
+      "id": "ac-2",
+      "statement": "Existing tests still pass.",
+      "required": true
+    },
+    {
+      "id": "ac-3",
+      "statement": "The change is documented.",
+      "required": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-1",
+      "statement": "The fix is verified by a reproduction that failed before and passes after.",
+      "type": "code",
+      "required": true,
+      "evidence": ["ac-1", "ac-2"]
+    }
+  ],
+  "evidence": [
+    "verification_run output",
+    "test command and result"
+  ],
+  "unknownPolicy": "review"
+}

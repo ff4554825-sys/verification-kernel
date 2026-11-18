@@ -1,0 +1,97 @@
+{
+  "source": "SWE-bench/swe-bench-tasks",
+  "subset": "sympy",
+  "measuredAt": "2026-10-28T03:00:00+08:00",
+  "environment": {
+    "distro": "Ubuntu 22.04 WSL2",
+    "python": "Miniconda py39 3.9.25",
+    "mpmath": "1.3.0",
+    "exactTaskEnvironment": false,
+    "note": "The task environment.yml pins Python 3.9.20; the exact conda solve was not completed."
+  },
+  "tasks": [
+    {
+      "id": "sympy__sympy-11232",
+      "baseCommit": "4c8a8590be682e74ec91ab217c646baa4686a255",
+      "noGold": { "failed": 4, "exceptions": 7, "passed": 93, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 7, "passed": 97, "exit": 1 },
+      "assessment": "target fixed; environment exceptions remain"
+    },
+    {
+      "id": "sympy__sympy-11384",
+      "baseCommit": "496e776108957d8c049cbef49522cef4c1955e2f",
+      "noGold": { "failed": 0, "exceptions": 0, "passed": 181, "xpass": 1, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 0, "passed": 179, "exit": 1 },
+      "assessment": "not reproducible: target test passed before gold"
+    },
+    {
+      "id": "sympy__sympy-11400",
+      "baseCommit": "8dcb12a6cf500e8738d6729ab954a261758f49ca",
+      "noGold": { "failed": 2, "exceptions": 0, "passed": 30, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 0, "passed": 32, "exit": 0 },
+      "assessment": "clean real-task pass"
+    },
+    {
+      "id": "sympy__sympy-11438",
+      "baseCommit": "46e3e96e5a6a16f340320585299ed577e1bf882d",
+      "noGold": { "failed": 1, "exceptions": 0, "passed": 24, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 15, "passed": 25, "exit": 1 },
+      "assessment": "target fixed; environment exceptions remain"
+    },
+    {
+      "id": "sympy__sympy-11618",
+      "baseCommit": "360290c4c401e386db60723ddb0109ed499c9f6e",
+      "noGold": { "failed": 1, "exceptions": 1, "passed": 5, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 1, "passed": 6, "exit": 1 },
+      "assessment": "target fixed; environment exception remains"
+    },
+    {
+      "id": "sympy__sympy-11787",
+      "baseCommit": "a53c4ad94a9657702764e9b5dc4a3eaa01c0f54d",
+      "noGold": { "failed": 1, "exceptions": 0, "passed": 4, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 0, "passed": 5, "exit": 0 },
+      "assessment": "clean real-task pass"
+    },
+    {
+      "id": "sympy__sympy-11788",
+      "baseCommit": "e1ce41b95534f80955e3809fdf5ada61ecb5946f",
+      "noGold": { "failed": 1, "exceptions": 7, "passed": 95, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 7, "passed": 96, "exit": 1 },
+      "assessment": "target fixed; environment exceptions remain"
+    },
+    {
+      "id": "sympy__sympy-11794",
+      "baseCommit": "8e80c0be90728b915942d7953e4b2c5d56deb570",
+      "noGold": { "failed": 1, "exceptions": 0, "passed": 85, "xpass": 1, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 14, "passed": 84, "xpass": 1, "exit": 1 },
+      "assessment": "target fixed; XPASS and environment exceptions remain"
+    },
+    {
+      "id": "sympy__sympy-11818",
+      "baseCommit": "a221c376f3f382d251a600aa336b45e95f92b7fe",
+      "noGold": { "failed": 1, "exceptions": 9, "passed": 23, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 10, "passed": 23, "exit": 1 },
+      "assessment": "target fixed; environment exceptions remain"
+    },
+    {
+      "id": "sympy__sympy-11831",
+      "baseCommit": "9ce74956ad542e069a9a7743bf0a751c5a26e727",
+      "noGold": { "failed": 0, "exceptions": 8, "passed": 64, "exit": 1 },
+      "gold": { "failed": 0, "exceptions": 7, "passed": 65, "exit": 1 },
+      "assessment": "not reproducible: target test passed before gold"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "clean": 2,
+    "targetFixedWithEnvironmentNoise": 6,
+    "notReproducible": 2,
+    "preGoldFailuresDetected": 8,
+    "preGoldEscapes": 2,
+    "preGoldEscapeRate": 0.2
+  },
+  "notes": [
+    "11232, 11384, and 11400 retain their prior same-task results because the fetch step was temporarily unavailable.",
+    "Exit code 1 with zero failed target tests is still counted as not clean because of XPASS/environment exceptions."
+  ]
+}

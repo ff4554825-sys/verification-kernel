@@ -1,0 +1,42 @@
+# Portable starting point for the DSH gate.
+#
+# The shipped `cordis.patch.yml` at the repo root is one machine's live snapshot
+# (absolute Windows paths, a pinned node.exe, three routed projects). Installing
+# that as a bundle gives every other machine a gate whose project roots match
+# nothing, which looks configured and verifies nothing.
+#
+# This file is the safe default: the plugin loads, its tools register, and the
+# gate stays `off` until you name a project you actually want gated.
+#
+# Install (from the profile directory):
+#   dsh plugin --profile <profile> add <path-to-this-repo>
+#   # then merge the block below into <profile>/cordis.patch.yml
+#
+# Or as a bundle layer, after pointing dsh.bundle.patch at this file.
+- insert:
+    - id: verification-kernel
+      name: '@local/dsh-verification-kernel'
+      config:
+        # off      — load the plugin and its tools, never gate a turn
+        # dry-run  — run the plan, record evidence, do not steer
+        # enforce  — run the plan and steer failures back into the turn
+        mode: 'off'
+        # Publish the accuracy-first prompt section and the verification-protocol
+        # skill to new sessions. Leave false until you have a project to gate.
+        autoLoad: false
+        autoFeedback: false
+        writeArtifacts: true
+        maxAttempts: 2
+        includeSubagents: false
+        # Name real projects here; see docs/verification-stack-architecture.md.
+        # A project needs an id, a root, and at least one check with an argv array.
+        projects: []
+        # projects:
+        #   - id: my-repo
+        #     root: '/absolute/path/to/my-repo'
+        #     mode: 'dry-run'
+        #     checks:
+        #       - id: unit
+        #         argv: ['node', '--test', 'test/all.test.js']
+        #         required: true
+        #         timeoutMs: 300000

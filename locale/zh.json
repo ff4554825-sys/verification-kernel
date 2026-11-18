@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "验证内核",
+    "description": "在回合结束前运行确定性检查，将失败证据回灌给 Agent 并记录裁决产物；默认关闭，需要在 profile patch 中启用。"
+  }
+}

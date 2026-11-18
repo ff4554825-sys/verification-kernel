@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "note": "A task only counts as evidence once a human has read its task.md, its visible test, and its held-out test and recorded what they confirmed. Regenerating the golden set does not clear this file; a stale id is an error, not a silent drop.",
+  "tasks": {
+    "chunk-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：size 非正整数返回 []，末片可短；heldout 三条均与契约一致"
+    },
+    "chunk-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：size 非正整数返回 []，末片可短；heldout 三条均与契约一致"
+    },
+    "clamp-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：min/max 顺序无关，先归一化为区间；heldout 三条均与契约一致"
+    },
+    "clamp-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：min/max 顺序无关，先归一化为区间；heldout 三条均与契约一致"
+    },
+    "get-path-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：. 分隔下钻，数字段索引数组，空段返回 undefined 不抛；heldout 两条一致"
+    },
+    "get-path-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：. 分隔下钻，数字段索引数组，空段返回 undefined 不抛；heldout 两条一致"
+    },
+    "group-by-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：key 可为属性名或函数，同键保序；heldout 两条一致"
+    },
+    "group-by-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：key 可为属性名或函数，同键保序；heldout 两条一致"
+    },
+    "parse-duration-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：仅 h/m/s，非法输入返回 null 不抛；heldout 两条一致"
+    },
+    "parse-duration-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：仅 h/m/s，非法输入返回 null 不抛；heldout 两条一致"
+    },
+    "range-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：左闭右开，负步长递减，步长 0 返回 []；heldout 两条一致"
+    },
+    "range-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：左闭右开，负步长递减，步长 0 返回 []；heldout 两条一致"
+    },
+    "slugify-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：小写、非字母数字压缩为单个 -、去首尾 -；heldout 两至三条一致"
+    },
+    "slugify-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：小写、非字母数字压缩为单个 -、去首尾 -；heldout 两至三条一致"
+    },
+    "sum-even-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：只累加偶数（含负偶数），无偶数返回 0；heldout 两条一致"
+    },
+    "sum-even-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：只累加偶数（含负偶数），无偶数返回 0；heldout 两条一致"
+    },
+    "title-case-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：按空白切词、首字母大写、连续空白压成单空格；heldout 两条一致"
+    },
+    "title-case-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：按空白切词、首字母大写、连续空白压成单空格；heldout 两条一致"
+    },
+    "unique-by-v1": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：key 可为属性名或函数，保留首次出现的元素与顺序；heldout 两条一致"
+    },
+    "unique-by-v2": {
+      "by": "ff4554825-sys",
+      "at": "2026-11-17",
+      "note": "契约：key 可为属性名或函数，保留首次出现的元素与顺序；heldout 两条一致"
+    }
+  }
+}

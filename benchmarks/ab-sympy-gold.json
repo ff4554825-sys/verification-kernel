@@ -1,0 +1,20 @@
+{
+  "kind": "paired-fixture",
+  "label": "gold-patch A/B on the 10-task sympy fixture",
+  "note": "This demonstrates the A/B harness; it is not a model A/B and not evidence of model IQ improvement.",
+  "control": "tests without the gold patch",
+  "treatment": "tests with the gold patch",
+  "pairs": 10,
+  "controlPass": 2,
+  "treatmentPass": 10,
+  "passRateDelta": 0.8,
+  "wins": 8,
+  "losses": 0,
+  "ties": 2,
+  "latencyDeltaMs": 200,
+  "bootstrap": {
+    "rounds": 500,
+    "seed": 24301,
+    "passRateDelta95CI": [0.5, 1]
+  }
+}

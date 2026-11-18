@@ -1,0 +1,17 @@
+# Git / release hygiene
+
+node_modules/
+.dsh/
+tools/
+tmp*/
+coverage/
+.stryker-tmp/
+reports/
+golden/results.json
+*.log
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db

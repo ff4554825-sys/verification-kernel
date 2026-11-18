@@ -1,0 +1,50 @@
+{
+  "id": "clamp-v2",
+  "template": "clamp",
+  "variant": 2,
+  "title": "Clamp a number",
+  "signature": "clamp(value, min, max)",
+  "dir": "tasks/clamp-v2",
+  "candidates": {
+    "good": "solution.good.mjs",
+    "bad-visible": "solution.bad-visible.mjs",
+    "bad-hidden": "solution.bad-hidden.mjs"
+  },
+  "plan": {
+    "id": "clamp-v2",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      },
+      {
+        "id": "heldout",
+        "argv": [
+          "node",
+          "heldout.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  },
+  "visibleOnlyPlan": {
+    "id": "clamp-v2-visible",
+    "checks": [
+      {
+        "id": "visible",
+        "argv": [
+          "node",
+          "test.mjs"
+        ],
+        "required": true,
+        "timeoutMs": 10000
+      }
+    ]
+  }
+}
