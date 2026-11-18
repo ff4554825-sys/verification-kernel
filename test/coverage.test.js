@@ -9,6 +9,10 @@ import {
   runPlan,
 } from '../lib/kernel.js';
 import { outcomeFromVerdict } from '../lib/outcomes.js';
+import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 const check = (id, extra = {}) => ({ id, argv: ['node', '-e', 'process.exit(0)'], ...extra });
 
@@ -176,4 +180,15 @@ test('an optional check that asks is not filed as a failure', async () => {
   assert.match(line, /optional needs a human: ask-optional/);
   assert.match(line, /optional unverified: unknown-optional/);
   assert.match(formatFeedback(verdict), /optional needs a human/);
+});
+
+test('the CLI exits 78 for an ask verdict, so a script can tell it from unknown', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ask-'));
+  const planPath = path.join(dir, 'plan.json');
+  fs.writeFileSync(planPath, JSON.stringify({
+    id: 'ask',
+    checks: [{ id: 'human', argv: [process.execPath, '-e', 'process.exit(78)'], required: true, timeoutMs: 20000 }],
+  }));
+  const result = spawnSync(process.execPath, [path.resolve('bin/verify.js'), '--plan', planPath, '--cwd', dir, '--no-artifacts'], { encoding: 'utf8' });
+  assert.equal(result.status, 78, result.stdout + result.stderr);
 });

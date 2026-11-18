@@ -19,6 +19,7 @@ import {
   planHash,
   evidenceFromResult,
   clampText,
+  ASK_EXIT_CODE,
 } from '../lib/kernel.js';
 import { redactSensitive } from '../lib/redact.js';
 import { runCommand } from '../lib/exec.js';
@@ -1110,6 +1111,11 @@ test('feedback, render, and gate contracts cover fallbacks', () => {
   assert.doesNotMatch(feedback, /stderr tail:/);
   assert.doesNotMatch(feedback, /Evidence:/);
   assert.match(formatFeedback(verdict, { maxChars: 1, artifactPath: 7 }), /truncated/);
+
+  assert.equal(ASK_EXIT_CODE, 78);
+  const ask = formatFeedback({ status: 'ask', reason: 'needs a decision', checks: [] });
+  assert.match(ask, /exit code 78\./);
+  assert.doesNotMatch(ask, /exit code 3\b/);
 
   assert.match(renderVerdict({ status: 'pass', reason: 'ok', checks: [{ id: 'a', status: 'pass', exitCode: 0, durationMs: 0 }], artifactPath: 7 }), /a: pass, exit 0 — 0\.00s/);
   assert.doesNotMatch(renderVerdict({ status: 'pass', reason: 'ok', checks: [] }), /Evidence/);

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-/** CLI: run a verification plan and exit 0 (pass), 1 (fail), or 2 (unknown/error). */
+/** CLI: run a verification plan and exit 0 (pass), 1 (fail), 2 (unknown/error), or 78 (ask). */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import { normalizePlan, runPlan, renderVerdict } from '../lib/kernel.js';
+import { normalizePlan, runPlan, renderVerdict, ASK_EXIT_CODE } from '../lib/kernel.js';
 import { runCommand } from '../lib/exec.js';
 import { writeVerdictArtifacts } from '../lib/artifacts.js';
 import { signVerdict } from '../lib/sign.js';
@@ -137,7 +137,7 @@ async function main() {
     console.log(renderVerdict(verdict));
     if (artifacts !== null) console.log(`Latest: ${artifacts.latest}`);
   }
-  process.exitCode = verdict.status === 'pass' ? 0 : verdict.status === 'fail' ? 1 : 2;
+  process.exitCode = verdict.status === 'pass' ? 0 : verdict.status === 'fail' ? 1 : verdict.status === 'ask' ? ASK_EXIT_CODE : 2;
 }
 
 main().catch((error) => {

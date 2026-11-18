@@ -44,7 +44,7 @@ rather than the agent's workspace, and a check that cannot be verified produces
 | `lib/benchmark.js` | Patch-task benchmark runner (worktree/WSL/Docker) with false accept/reject. |
 | `lib/trace-export.js` | Eval-friendly trace export. |
 | `index.js` | DSH Host plugin: `verification_run` tool + routed `agent/turn-stopping` gate. |
-| `bin/verify.js` | CLI: exit 0 pass, 1 fail, 2 unknown/error. |
+| `bin/verify.js` | CLI: exit 0 pass, 1 fail, 78 ask, 2 unknown/error. |
 | `bin/override.js` | CLI: create/revoke a human override. |
 | `bin/report.js` | CLI: summarize verifier trace metrics. |
 | `bin/contract.js` | CLI: validate an acceptance contract. |
@@ -305,7 +305,9 @@ result and logged with the rule id.
 Exit code **78** (`ASK_EXIT_CODE`) makes a check answer `ask` instead of
 `fail`: the run happened, the answer is genuinely "a person has to decide".
 `ask` outranks `unknown` and is outranked by `fail`; the gate allows the turn
-and records the reason. 78 is sysexits `EX_CONFIG`, picked because low codes
+and records the reason. The `dsh-verify` CLI exits **78** when the verdict is
+`ask`, so a script can tell it apart from `unknown` (2). 78 is sysexits
+`EX_CONFIG`, picked because low codes
 already mean "plain failure" in the wild — the golden benchmark's own probe
 exits 3 and would have been reinterpreted.
 
