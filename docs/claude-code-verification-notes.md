@@ -117,9 +117,9 @@ that passes, unless the verdict says which one happened.
 `runPlan()` now returns a `coverage` block on every verdict:
 
 ```json
-{ "planned": 3, "ran": 1,
+{ "planned": 3, "ran": 2,
   "skipped": [{ "id": "unit", "required": true, "reason": "fast-path: documentation-only change" }],
-  "optionalFailed": ["lint"], "partial": true }
+  "optionalFailed": ["lint"], "optionalAsk": [], "optionalUnknown": [], "partial": true }
 ```
 
 `partial` is true when a **required** check was skipped, which is the case a

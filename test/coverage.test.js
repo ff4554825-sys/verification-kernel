@@ -20,7 +20,9 @@ const passAll = async () => ({ exitCode: 0, stdout: '', stderr: '' });
 
 test('a full run reports no skipped checks', async () => {
   const verdict = await runPlan(planOf([check('a'), check('b')]), { cwd: process.cwd(), runCommand: passAll });
-  assert.deepEqual(verdict.coverage, { planned: 2, ran: 2, skipped: [], optionalFailed: [], partial: false });
+  assert.deepEqual(verdict.coverage, {
+    planned: 2, ran: 2, skipped: [], optionalFailed: [], optionalAsk: [], optionalUnknown: [], partial: false,
+  });
   assert.equal(describeCoverage(verdict.coverage), '');
 });
 
@@ -62,6 +64,7 @@ test('a failing optional check is named even though the verdict passes', async (
   });
   assert.equal(verdict.status, 'pass');
   assert.deepEqual(verdict.coverage.optionalFailed, ['lint']);
+  assert.deepEqual(verdict.coverage.optionalAsk, []);
   assert.match(describeCoverage(verdict.coverage), /optional failed: lint/);
   const feedback = formatFeedback(verdict);
   assert.match(feedback, /passed for the checks that ran/);
@@ -147,4 +150,30 @@ test('a check can tell a first attempt from a retry', async () => {
   assert.deepEqual(seen, [0, 1]);
   assert.equal(verdict.status, 'flaky');
   assert.deepEqual(verdict.checks[0].attemptStatuses, ['fail', 'pass']);
+});
+
+test('an optional check that asks is not filed as a failure', async () => {
+  const verdict = await runPlan(planOf([
+    check('ok'),
+    check('failed-optional', { required: false }),
+    check('ask-optional', { required: false }),
+    check('unknown-optional', { required: false }),
+  ]), {
+    cwd: process.cwd(),
+    runCommand: async (target) => {
+      if (target.id === 'failed-optional') return { exitCode: 1, stdout: '', stderr: '' };
+      if (target.id === 'ask-optional') return { exitCode: 78, stdout: '', stderr: '' };
+      if (target.id === 'unknown-optional') return { exitCode: null, timedOut: true, stdout: '', stderr: '' };
+      return { exitCode: 0, stdout: '', stderr: '' };
+    },
+  });
+  assert.equal(verdict.status, 'pass', 'optional outcomes never decide the verdict');
+  assert.deepEqual(verdict.coverage.optionalFailed, ['failed-optional']);
+  assert.deepEqual(verdict.coverage.optionalAsk, ['ask-optional']);
+  assert.deepEqual(verdict.coverage.optionalUnknown, ['unknown-optional']);
+  const line = describeCoverage(verdict.coverage);
+  assert.match(line, /optional failed: failed-optional/);
+  assert.match(line, /optional needs a human: ask-optional/);
+  assert.match(line, /optional unverified: unknown-optional/);
+  assert.match(formatFeedback(verdict), /optional needs a human/);
 });

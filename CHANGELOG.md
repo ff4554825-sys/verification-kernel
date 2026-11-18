@@ -21,6 +21,9 @@
 - Exit code 78 makes a check answer `ask` — a human decision, not a failure.
 - Checks receive `VERIFICATION_ATTEMPT` so they can tell a retry from a first
   attempt.
+- Optional checks report three separate buckets: `optionalFailed`,
+  `optionalAsk`, `optionalUnknown`. A check waiting for a human is no longer
+  filed as a failure.
 - Verdict reason codes: seven enumerated `unknown` reasons, a per-reason gate
   policy, `unknownReasons` in verdicts and outcomes, verdict schema 2.
 - `dsh-verify-rescore`: re-judge stored evidence without re-running a check.
